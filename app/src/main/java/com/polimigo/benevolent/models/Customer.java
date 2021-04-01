@@ -1,13 +1,12 @@
 package com.polimigo.benevolent.models;
 
-
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "person")
-public class Person {
+@Entity
+public class Customer {
 
     @PrimaryKey(autoGenerate = true)
     private int id;
@@ -18,15 +17,15 @@ public class Person {
     @ColumnInfo(name = "notes")
     private String notes;
 
-    public Person(int id, String name, String number, String notes) {
+    @Ignore
+    public Customer(int id, String name, String number, String notes) {
         this.id = id;
         this.name = name;
         this.number = number;
         this.notes = notes;
     }
 
-    @Ignore
-    public Person(String name, String number, String notes) {
+    public Customer(String name, String number, String notes) {
         this.name = name;
         this.number = number;
         this.notes = notes;

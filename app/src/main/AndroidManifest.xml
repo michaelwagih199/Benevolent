@@ -4,21 +4,29 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Benevolent">
-        <activity android:name=".views.Persons"></activity>
-        <activity android:name=".views.SplashScreen" />
-        <activity android:name=".views.LoginScreen" />
-        <activity android:name=".views.MainActivity">
+        <activity android:name=".views.AboutApplication"></activity>
+        <activity android:name=".views.Persons" />
+        <activity
+            android:name=".views.SplashScreen"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".views.LoginScreen" />
+        <activity android:name=".views.MainActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

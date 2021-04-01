@@ -1,9 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".views.LoginScreen">
+    xmlns:bind="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.polimigo.benevolent.viewModel.LoginViewModel" />
+    </data>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/back_white">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="@dimen/_100ssp"
+            android:layout_height="@dimen/_100ssp"
+            android:elevation="@dimen/_20ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.178"
+            app:srcCompat="@drawable/logo" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical"
+            app:cardBackgroundColor="@color/green"
+            app:cardCornerRadius="@dimen/_20ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.449">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/_20ssp"
+                android:paddingBottom="@dimen/_20ssp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20ssp"
+                    android:layout_marginTop="@dimen/_30ssp"
+                    android:layout_marginRight="@dimen/_20ssp"
+                    android:fontFamily="@font/el_messiri"
+                    android:hint="UserName"
+                    android:drawableLeft="@drawable/ic_baseline_account_circle_24"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/white"
+                    android:text="@={viewModel.userName}"/>
+
+                <EditText
+                    android:id="@+id/editTextTextPassword2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20ssp"
+                    android:layout_marginTop="@dimen/_10ssp"
+                    android:layout_marginRight="@dimen/_20ssp"
+                    android:ems="10"
+                    android:fontFamily="@font/el_messiri"
+                    android:hint="Password"
+                    android:textColor="@android:color/white"
+                    android:drawableLeft="@drawable/ic_baseline_lock_24"
+                    android:inputType="textPassword"
+                    android:textColorHint="@android:color/white"
+                    android:text="@={viewModel.password}"/>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Login"
+                    android:layout_marginTop="@dimen/_30ssp"
+                    android:layout_marginLeft="@dimen/_10ssp"
+                    android:layout_marginRight="@dimen/_10ssp"
+                    android:textSize="@dimen/_20ssp"
+                    bind:toastMessage="@{viewModel.toastMessage}"
+                    android:fontFamily="@font/el_messiri_medium"
+                    android:onClick="@{()-> viewModel.onLoginClicked()}"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20ssp"
+                    android:fontFamily="@font/el_messiri_medium"
+                    android:onClick="@{()-> viewModel.onAboutApplication()}"
+                    android:text="About Application"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/_18ssp"
+                    android:gravity="center_horizontal" />
+            </LinearLayout>
+
+            <include
+                android:id="@+id/llProgressBar"
+                android:visibility="gone"
+                layout="@layout/layout_progress_bar_with_text"/>
+
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

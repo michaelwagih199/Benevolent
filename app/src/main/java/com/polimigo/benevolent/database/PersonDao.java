@@ -1,7 +1,5 @@
 package com.polimigo.benevolent.database;
 
-
-
 import android.app.Person;
 
 import androidx.room.Dao;
@@ -10,23 +8,26 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import com.polimigo.benevolent.models.Customer;
+
 import java.util.List;
 
 @Dao
 public interface PersonDao {
 
-    @Query("SELECT * FROM PERSON")
-    List<Person> loadAllPersons();
+    @Query("SELECT * FROM customer")
+    List<Customer> loadAllPersons();
 
     @Insert
-    void insertPerson(Person person);
+    void insertPerson(Customer customer);
 
     @Update
-    void updatePerson(Person person);
+    void updatePerson(Customer customer);
 
     @Delete
-    void delete(Person person);
+    void delete(Customer customer);
 
-    @Query("SELECT * FROM PERSON WHERE id = :id")
-    Person loadPersonById(int id);
+    @Query("SELECT * FROM customer WHERE id = :id")
+    Customer loadPersonById(int id);
+
 }

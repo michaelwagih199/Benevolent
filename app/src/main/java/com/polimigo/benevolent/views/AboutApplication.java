@@ -5,13 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.polimigo.benevolent.R;
-import com.polimigo.benevolent.database.AppDatabase;
 
-public class MainActivity extends AppCompatActivity {
+public class AboutApplication extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_about_application);
     }
 }

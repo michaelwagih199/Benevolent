@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/allan</item>
+        <item>@font/allan_bold</item>
+        <item>@font/amaranth</item>
+        <item>@font/el_messiri</item>
+        <item>@font/el_messiri_medium</item>
+    </array>
+</resources>
