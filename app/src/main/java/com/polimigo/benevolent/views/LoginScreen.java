@@ -43,7 +43,7 @@ public class LoginScreen extends AppCompatActivity implements BaseEvent {
 
     @Override
     public void onFailerL() {
-
+        llProgressBar.setVisibility(View.GONE);
     }
 
 }

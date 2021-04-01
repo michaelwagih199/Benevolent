@@ -9,7 +9,9 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Benevolent">
-        <activity android:name=".views.AboutApplication"></activity>
+        <activity android:name=".views.CustomersScreen"></activity>
+        <activity android:name=".views.SafeScreen" />
+        <activity android:name=".views.AboutApplication" />
         <activity android:name=".views.Persons" />
         <activity
             android:name=".views.SplashScreen"

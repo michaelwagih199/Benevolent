@@ -74,9 +74,14 @@ public class LoginViewModel extends BaseObservable {
                 baseEvent.onSuccessL();
                 context.startActivity(new Intent(context.getApplicationContext(), MainActivity.class));
             }
-            else setToastMessage(errorMessage);
-        } else
-            setToastMessage(errorMessage);
+            else {
+                setToastMessage(errorMessage);
+                baseEvent.onFailerL();
+            }
+        } else{
+            setToastMessage(validateMessage);
+            baseEvent.onFailerL();
+        }
     }
 
     public boolean isInputDataValid() {
