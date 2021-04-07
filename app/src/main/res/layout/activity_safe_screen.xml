@@ -32,7 +32,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_10ssp"
-                app:cardBackgroundColor="@color/creamy"
+                app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="@dimen/_10ssp">
 
                 <LinearLayout
@@ -47,7 +47,7 @@
                         android:fontFamily="@font/el_messiri_medium"
                         android:gravity="center_horizontal"
                         android:padding="@dimen/_2ssp"
-                        android:text="All Subscribers"
+                        android:text="All Registers "
                         android:textAlignment="center"
                         android:textColor="@android:color/white"
                         android:textSize="@dimen/_20ssp" />
@@ -58,10 +58,11 @@
                         android:fontFamily="@font/el_messiri_medium"
                         android:gravity="center_horizontal"
                         android:padding="@dimen/_10ssp"
-                        android:text="25"
+                        android:text="@={``+viewModel.customersCount}"
                         android:textAlignment="center"
                         android:textColor="@color/red"
                         android:textSize="@dimen/_20ssp" />
+
                 </LinearLayout>
 
 
@@ -71,7 +72,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_10ssp"
-                app:cardBackgroundColor="@color/creamy"
+                app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="@dimen/_10ssp">
 
                 <LinearLayout
@@ -97,7 +98,7 @@
                         android:fontFamily="@font/el_messiri_medium"
                         android:gravity="center_horizontal"
                         android:padding="@dimen/_10ssp"
-                        android:text="25"
+                        android:text="@={``+viewModel.moneySum}"
                         android:textAlignment="center"
                         android:textColor="@color/red"
                         android:textSize="@dimen/_20ssp" />
@@ -105,43 +106,6 @@
 
             </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_10ssp"
-                app:cardBackgroundColor="@color/creamy"
-                app:cardCornerRadius="@dimen/_10ssp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/red"
-                        android:fontFamily="@font/el_messiri_medium"
-                        android:gravity="center_horizontal"
-                        android:padding="@dimen/_2ssp"
-                        android:text="Subscriber Share"
-                        android:textAlignment="center"
-                        android:textColor="@android:color/white"
-                        android:textSize="@dimen/_20ssp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/el_messiri_medium"
-                        android:gravity="center_horizontal"
-                        android:padding="@dimen/_10ssp"
-                        android:text="25"
-                        android:textAlignment="center"
-                        android:textColor="@color/red"
-                        android:textSize="@dimen/_20ssp" />
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
 
             <Button
                 android:layout_width="match_parent"
@@ -150,7 +114,7 @@
                 android:layout_marginTop="@dimen/_20ssp"
                 android:layout_marginRight="@dimen/_10ssp"
                 android:fontFamily="@font/el_messiri_medium"
-                android:text="Add money"
+                android:text="Deposit money"
                 android:textSize="@dimen/_20ssp" />
 
             <Button
@@ -159,7 +123,7 @@
                 android:layout_marginLeft="@dimen/_10ssp"
                 android:layout_marginRight="@dimen/_10ssp"
                 android:fontFamily="@font/el_messiri_medium"
-                android:text="money division"
+                android:text="Withdrawal money"
                 android:textSize="@dimen/_20ssp" />
 
         </LinearLayout>

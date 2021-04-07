@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.polimigo.benevolent.R;
-import com.polimigo.benevolent.database.AppDatabase;
 
 public class MainActivity extends AppCompatActivity {
 

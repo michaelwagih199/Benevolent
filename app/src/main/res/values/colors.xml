@@ -8,10 +8,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     
-    <color name="creamy">#e9b481</color>
+    <color name="creamy">#fdfc4f</color>
     <color name="back_white">#EADFBF</color>
-    <color name="creamy_2">#edbcc0</color>
-    <color name="green">#5a7d4a</color>
+    <color name="creamy_2">#fc9b05</color>
+    <color name="green">#517e03</color>
     <color name="red">#be0027</color>
-    <color name="pink">#ea5c7d</color>
+    <color name="blue">#033839</color>
+    <color name="redDark">#530304</color>
 </resources>

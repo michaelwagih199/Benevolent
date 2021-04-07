@@ -3,9 +3,9 @@
 
     <item>
         <shape>
-            <stroke android:width="2dp" android:color="@color/green" />
+            <stroke android:width="2dp" android:color="@color/creamy" />
 
-            <solid android:color="@android:color/transparent" />
+            <solid android:color="@color/creamy_2" />
 
             <corners android:bottomLeftRadius="6dp" android:bottomRightRadius="6dp" android:topLeftRadius="6dp" android:topRightRadius="6dp" />
         </shape>

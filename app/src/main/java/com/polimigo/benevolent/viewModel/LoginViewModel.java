@@ -1,5 +1,6 @@
 package com.polimigo.benevolent.viewModel;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
@@ -73,6 +74,7 @@ public class LoginViewModel extends BaseObservable {
             if (isUser()){
                 baseEvent.onSuccessL();
                 context.startActivity(new Intent(context.getApplicationContext(), MainActivity.class));
+                ((Activity) context).finish();
             }
             else {
                 setToastMessage(errorMessage);
@@ -99,4 +101,5 @@ public class LoginViewModel extends BaseObservable {
             result = false;
         return result;
     }
+
 }

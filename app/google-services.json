@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "183606979083",
+    "project_id": "benevolent-5a3cf",
+    "storage_bucket": "benevolent-5a3cf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:183606979083:android:54693f565a7c8d38e4f50e",
+        "android_client_info": {
+          "package_name": "com.polimigo.benevolent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "183606979083-raaeo3ckntlj9dro2h01in39sse0548o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzcgDOkJ4bcZep_leSD3MLRrXHrWDHmUM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "183606979083-raaeo3ckntlj9dro2h01in39sse0548o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.polimigo.benevolent.viewModel.CustomerViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/blue">
+
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/ic_rounded_transparent"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/_12ssp"
+                android:paddingTop="@dimen/_12ssp"
+                android:paddingRight="@dimen/_12ssp"
+                android:paddingBottom="@dimen/_15ssp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_8ssp"
+                    app:cardBackgroundColor="@color/green"
+                    app:cardCornerRadius="@dimen/_10ssp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/el_messiri"
+                        android:gravity="center_horizontal"
+                        android:padding="@dimen/_2ssp"
+                        android:text="@{viewModel.saveRegisterCheck}"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_16ssp" />
+                </androidx.cardview.widget.CardView>
+
+                <EditText
+                    android:id="@+id/etFirstNameSignUp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_4ssp"
+                    android:layout_marginTop="@dimen/_12ssp"
+                    android:layout_marginRight="@dimen/_4ssp"
+                    android:hint="Name"
+                    android:inputType="text"
+                    android:text="@={viewModel.customer.name}"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/etLastNameSignUp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_4ssp"
+                    android:layout_marginTop="@dimen/_12ssp"
+                    android:layout_marginRight="@dimen/_4ssp"
+                    android:hint="Last Name"
+                    android:inputType="text"
+                    android:text="@={viewModel.customer.number}"
+                    android:textColor="@color/blue" />
+
+                <EditText
+                    android:id="@+id/etUserNameSignUp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_4ssp"
+                    android:layout_marginTop="@dimen/_4ssp"
+                    android:layout_marginRight="@dimen/_4ssp"
+                    android:hint="Value"
+                    android:inputType="numberDecimal"
+                    android:text="@={``+viewModel.customer.value}"
+                    android:textColor="@color/blue" />
+
+                <EditText
+                    android:id="@+id/etPasswordSignUp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_4ssp"
+                    android:layout_marginTop="@dimen/_4ssp"
+                    android:layout_marginRight="@dimen/_4ssp"
+                    android:hint="Statues"
+                    android:inputType="text"
+                    android:text="@={viewModel.customer.notes}"
+                    android:textColor="@color/blue" />
+
+                <Button
+                    android:id="@+id/btnSignUp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_12ssp"
+                    android:layout_marginTop="@dimen/_12ssp"
+                    android:layout_marginRight="@dimen/_12ssp"
+                    android:fontFamily="@font/el_messiri_medium"
+                    android:onClick="@{()-> viewModel.onAddRegister()}"
+                    android:text="Save Register"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14ssp"
+                    android:textStyle="normal"
+                    bind:toastMessage="@{viewModel.toastMessage}" />
+            </LinearLayout>
+        </ScrollView>
+
+        <include
+            android:id="@+id/llProgressBar"
+            layout="@layout/layout_progress_bar_with_text"
+            android:visibility="gone" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

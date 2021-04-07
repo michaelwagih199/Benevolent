@@ -1,42 +1,23 @@
 package com.polimigo.benevolent.models;
+import com.google.firebase.firestore.DocumentId;
 
-import androidx.room.ColumnInfo;
-import androidx.room.Entity;
-import androidx.room.Ignore;
-import androidx.room.PrimaryKey;
-
-@Entity
 public class Customer {
-
-    @PrimaryKey(autoGenerate = true)
-    private int id;
-    @ColumnInfo(name = "name")
+    @DocumentId
+    private String documentId;
     private String name;
-    @ColumnInfo(name = "number")
     private String number;
-    @ColumnInfo(name = "notes")
     private String notes;
+    private Double value;
 
-    @Ignore
-    public Customer(int id, String name, String number, String notes) {
-        this.id = id;
+    public Customer(String documentId, String name, String number, String notes, Double value) {
+        this.documentId = documentId;
         this.name = name;
         this.number = number;
         this.notes = notes;
+        this.value = value;
     }
 
-    public Customer(String name, String number, String notes) {
-        this.name = name;
-        this.number = number;
-        this.notes = notes;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public Customer() {
     }
 
     public String getName() {
@@ -62,4 +43,32 @@ public class Customer {
     public void setNotes(String notes) {
         this.notes = notes;
     }
+
+    public Double getValue() {
+        return value;
+    }
+
+    public void setValue(Double value) {
+        this.value = value;
+    }
+
+    public String getDocumentId() {
+        return documentId;
+    }
+
+    public void setDocumentId(String documentId) {
+        this.documentId = documentId;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "documentId='" + documentId + '\'' +
+                ", name='" + name + '\'' +
+                ", number='" + number + '\'' +
+                ", notes='" + notes + '\'' +
+                ", value=" + value +
+                '}';
+    }
+
 }
