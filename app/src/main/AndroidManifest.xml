@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.polimigo.benevolent">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -10,7 +11,9 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Benevolent">
-        <activity android:name=".views.AddRegister"></activity>
+        <activity android:name=".views.WithdrawalActivity"></activity>
+        <activity android:name=".views.DepositActivity" />
+        <activity android:name=".views.AddRegister" />
         <activity android:name=".views.CustomersScreen" />
         <activity android:name=".views.SafeScreen" />
         <activity android:name=".views.AboutApplication" />

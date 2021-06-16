@@ -60,7 +60,7 @@
                     android:textSize="@dimen/_20ssp"
                     android:fontFamily="@font/amaranth"
                     android:onClick="toSafe"
-                    android:text="Safe" />
+                    android:text="Treasury" />
 
                 <Button
                     android:id="@+id/button4"

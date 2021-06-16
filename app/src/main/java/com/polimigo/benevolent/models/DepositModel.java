@@ -1,21 +1,31 @@
 package com.polimigo.benevolent.models;
+
 import com.google.firebase.firestore.DocumentId;
+
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 import java.util.Objects;
 
 public class DepositModel {
+
     @DocumentId
     private String documentId;
+    private String comment;
     private Double value;
-    private Date createdAt;
+    private String date;
 
     public DepositModel() {
+
+        date= new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
+
     }
 
-    public DepositModel(String documentId, Double value, Date createdAt) {
+    public DepositModel(String documentId, Double value, String comment) {
         this.documentId = documentId;
         this.value = value;
-        this.createdAt = createdAt;
+        this.comment = comment;
+        date= new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
     }
 
     public String getDocumentId() {
@@ -34,21 +44,29 @@ public class DepositModel {
         this.value = value;
     }
 
-    public Date getCreatedAt() {
-        return createdAt;
+    public String getDate() {
+        return date;
     }
 
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 
     @Override
     public String toString() {
         return "DepositModel{" +
                 "documentId='" + documentId + '\'' +
+                ", comment='" + comment + '\'' +
                 ", value=" + value +
-                ", createdAt=" + createdAt +
+                ", date='" + date + '\'' +
                 '}';
     }
-
 }

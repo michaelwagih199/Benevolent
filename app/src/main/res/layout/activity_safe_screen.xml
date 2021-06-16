@@ -115,6 +115,7 @@
                 android:layout_marginRight="@dimen/_10ssp"
                 android:fontFamily="@font/el_messiri_medium"
                 android:text="Deposit money"
+                android:onClick="toDeposit"
                 android:textSize="@dimen/_20ssp" />
 
             <Button
