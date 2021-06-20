@@ -1,14 +1,11 @@
 package com.polimigo.benevolent.models;
 
 import com.google.firebase.firestore.DocumentId;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
-import java.util.Objects;
 
 public class DepositModel {
-
     @DocumentId
     private String documentId;
     private String comment;
@@ -16,9 +13,7 @@ public class DepositModel {
     private String date;
 
     public DepositModel() {
-
         date= new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
-
     }
 
     public DepositModel(String documentId, Double value, String comment) {
@@ -69,4 +64,5 @@ public class DepositModel {
                 ", date='" + date + '\'' +
                 '}';
     }
+
 }

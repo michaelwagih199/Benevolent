@@ -9,12 +9,19 @@ import com.polimigo.benevolent.repositories.CustomerRepository;
 public class SafeViewModel extends BaseObservable {
     private Context context;
     private int customersCount;
-    private Double moneySum;
+    private float depositAmount;
+    private float withdrawAmount;
 
-    public SafeViewModel(Context context, int customersCount, Double moneySum) {
+    public SafeViewModel(Context context, int customersCount, float depositAmount, float withdrawAmount) {
         this.context = context;
         this.customersCount = customersCount;
-        this.moneySum = moneySum;
+        this.withdrawAmount = withdrawAmount;
+        this.depositAmount = depositAmount;
+    }
+
+    public String getTotal(){
+        float result =  depositAmount - withdrawAmount;
+        return ""+result;
     }
 
     public int getCustomersCount() {
@@ -25,13 +32,20 @@ public class SafeViewModel extends BaseObservable {
         this.customersCount = customersCount;
     }
 
-    public Double getMoneySum() {
-        return moneySum;
+    public float getDepositAmount() {
+        return depositAmount;
     }
 
-    public void setMoneySum(Double moneySum) {
-        this.moneySum = moneySum;
+    public void setDepositAmount(float depositAmount) {
+        this.depositAmount = depositAmount;
     }
 
+    public float getWithdrawAmount() {
+        return withdrawAmount;
+    }
+
+    public void setWithdrawAmount(float withdrawAmount) {
+        this.withdrawAmount = withdrawAmount;
+    }
 }
 

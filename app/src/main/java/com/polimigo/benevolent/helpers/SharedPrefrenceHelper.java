@@ -15,6 +15,20 @@ public class SharedPrefrenceHelper {
         editor.commit();
     }
 
+
+    public void setDeposit(Context context , float input) {
+        SharedPreferences.Editor editor = getPrefs(context).edit();
+        editor.putFloat("deposit", input);
+        editor.commit();
+    }
+
+    public void setWithDrwal(Context context , float input) {
+        SharedPreferences.Editor editor = getPrefs(context).edit();
+        editor.putFloat("withDrawl", input);
+        editor.commit();
+    }
+
+
     public void setPassword(Context context , String input) {
         SharedPreferences.Editor editor = getPrefs(context).edit();
         editor.putString("password", input);
@@ -28,6 +42,17 @@ public class SharedPrefrenceHelper {
     public String getPassword(Context context) {
         return getPrefs(context).getString("password", "default");
     }
+
+
+    public float getWithDrawl(Context context) {
+        return getPrefs(context).getFloat("withDrawl", (float) 0.0);
+    }
+
+
+    public float getDeposit(Context context) {
+        return getPrefs(context).getFloat("deposit", (float) 0.0);
+    }
+
 }
 
 

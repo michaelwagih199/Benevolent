@@ -1,24 +1,33 @@
 package com.polimigo.benevolent.models;
 
 import com.google.firebase.firestore.DocumentId;
-
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 public class WithdrawalModel {
+
     @DocumentId
     private String documentId;
     private Double value;
-    private Date createdAt;
+    private String date;
     private String customerId;
+    private String month_name;
+    Calendar cal= Calendar.getInstance();
+    SimpleDateFormat month_date = new SimpleDateFormat("MMMM");
 
-    public WithdrawalModel(String documentId, Double value, Date createdAt, String customerId) {
+    public WithdrawalModel(String documentId, Double value, String customerId) {
         this.documentId = documentId;
         this.value = value;
-        this.createdAt = createdAt;
+        date = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
+        month_name = month_date.format(cal.getTime());
         this.customerId = customerId;
     }
 
     public WithdrawalModel() {
+        date = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
+        month_name = month_date.format(cal.getTime());
     }
 
     public String getDocumentId() {
@@ -37,12 +46,12 @@ public class WithdrawalModel {
         this.value = value;
     }
 
-    public Date getCreatedAt() {
-        return createdAt;
+    public String getDate() {
+        return date;
     }
 
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public String getCustomerId() {
@@ -53,15 +62,22 @@ public class WithdrawalModel {
         this.customerId = customerId;
     }
 
+    public String getMonth_name() {
+        return month_name;
+    }
+
+    public void setMonth_name(String month_name) {
+        this.month_name = month_name;
+    }
+
     @Override
     public String toString() {
         return "WithdrawalModel{" +
                 "documentId='" + documentId + '\'' +
                 ", value=" + value +
-                ", createdAt=" + createdAt +
+                ", date='" + date + '\'' +
                 ", customerId='" + customerId + '\'' +
                 '}';
     }
-
 
 }

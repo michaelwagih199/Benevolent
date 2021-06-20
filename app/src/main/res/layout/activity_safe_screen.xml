@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
@@ -14,120 +15,193 @@
         android:layout_height="match_parent"
         android:background="@color/back_white">
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-            <androidx.cardview.widget.CardView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_10ssp"
-                app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="@dimen/_10ssp">
+                android:orientation="vertical" >
 
-                <LinearLayout
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:layout_margin="@dimen/_5ssp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/_10ssp">
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/red"
-                        android:fontFamily="@font/el_messiri_medium"
-                        android:gravity="center_horizontal"
-                        android:padding="@dimen/_2ssp"
-                        android:text="All Registers "
-                        android:textAlignment="center"
-                        android:textColor="@android:color/white"
-                        android:textSize="@dimen/_20ssp" />
+                        android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/el_messiri_medium"
-                        android:gravity="center_horizontal"
-                        android:padding="@dimen/_10ssp"
-                        android:text="@={``+viewModel.customersCount}"
-                        android:textAlignment="center"
-                        android:textColor="@color/red"
-                        android:textSize="@dimen/_20ssp" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/red"
+                            android:fontFamily="@font/el_messiri_medium"
+                            android:gravity="center_horizontal"
+                            android:padding="@dimen/_2ssp"
+                            android:text="Total Withdrawals"
+                            android:textAlignment="center"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_20ssp" />
 
-                </LinearLayout>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/el_messiri_medium"
+                            android:gravity="center_horizontal"
+                            android:padding="@dimen/_10ssp"
+                            android:text="@={``+viewModel.withdrawAmount}"
+                            android:textAlignment="center"
+                            android:textColor="@color/red"
+                            android:textSize="@dimen/_20ssp" />
+                    </LinearLayout>
 
+                </androidx.cardview.widget.CardView>
 
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_10ssp"
-                app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="@dimen/_10ssp">
-
-                <LinearLayout
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:layout_margin="@dimen/_5ssp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/_10ssp">
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/red"
-                        android:fontFamily="@font/el_messiri_medium"
-                        android:gravity="center_horizontal"
-                        android:padding="@dimen/_2ssp"
-                        android:text="Money"
-                        android:textAlignment="center"
-                        android:textColor="@android:color/white"
-                        android:textSize="@dimen/_20ssp" />
+                        android:orientation="vertical">
 
-                    <TextView
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/red"
+                            android:fontFamily="@font/el_messiri_medium"
+                            android:gravity="center_horizontal"
+                            android:padding="@dimen/_2ssp"
+                            android:text="All Registers "
+                            android:textAlignment="center"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_20ssp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/el_messiri_medium"
+                            android:gravity="center_horizontal"
+                            android:padding="@dimen/_10ssp"
+                            android:text="@={``+viewModel.customersCount}"
+                            android:textAlignment="center"
+                            android:textColor="@color/red"
+                            android:textSize="@dimen/_20ssp" />
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5ssp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/_10ssp">
+
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/el_messiri_medium"
-                        android:gravity="center_horizontal"
-                        android:padding="@dimen/_10ssp"
-                        android:text="@={``+viewModel.moneySum}"
-                        android:textAlignment="center"
-                        android:textColor="@color/red"
-                        android:textSize="@dimen/_20ssp" />
-                </LinearLayout>
+                        android:orientation="vertical">
 
-            </androidx.cardview.widget.CardView>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/red"
+                            android:fontFamily="@font/el_messiri_medium"
+                            android:gravity="center_horizontal"
+                            android:padding="@dimen/_2ssp"
+                            android:text="Total Deposit"
+                            android:textAlignment="center"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_20ssp" />
 
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/el_messiri_medium"
+                            android:gravity="center_horizontal"
+                            android:padding="@dimen/_10ssp"
+                            android:text="@={``+viewModel.depositAmount}"
+                            android:textAlignment="center"
+                            android:textColor="@color/red"
+                            android:textSize="@dimen/_20ssp" />
+                    </LinearLayout>
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/_10ssp"
-                android:layout_marginTop="@dimen/_20ssp"
-                android:layout_marginRight="@dimen/_10ssp"
-                android:fontFamily="@font/el_messiri_medium"
-                android:text="Deposit money"
-                android:onClick="toDeposit"
-                android:textSize="@dimen/_20ssp" />
+                </androidx.cardview.widget.CardView>
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/_10ssp"
-                android:layout_marginRight="@dimen/_10ssp"
-                android:fontFamily="@font/el_messiri_medium"
-                android:text="Withdrawal money"
-                android:textSize="@dimen/_20ssp" />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5ssp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/_10ssp">
 
-        </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/red"
+                            android:fontFamily="@font/el_messiri_medium"
+                            android:gravity="center_horizontal"
+                            android:padding="@dimen/_2ssp"
+                            android:text="Total"
+                            android:textAlignment="center"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_20ssp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/el_messiri_medium"
+                            android:gravity="center_horizontal"
+                            android:padding="@dimen/_10ssp"
+                            android:text="@{viewModel.total}"
+                            android:textAlignment="center"
+                            android:textColor="@color/red"
+                            android:textSize="@dimen/_20ssp" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10ssp"
+                    android:layout_marginRight="@dimen/_10ssp"
+                    android:fontFamily="@font/el_messiri_medium"
+                    android:onClick="toWithDrawl"
+                    android:text="Withdrawal money"
+                    android:textSize="@dimen/_20ssp" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10ssp"
+                    android:layout_marginTop="@dimen/_20ssp"
+                    android:layout_marginRight="@dimen/_10ssp"
+                    android:fontFamily="@font/el_messiri_medium"
+                    android:onClick="toDeposit"
+                    android:text="Deposit money"
+                    android:textSize="@dimen/_20ssp" />
+            </LinearLayout>
+        </ScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

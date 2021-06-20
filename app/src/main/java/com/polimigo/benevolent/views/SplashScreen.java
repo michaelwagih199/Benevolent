@@ -17,11 +17,12 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
         sharedPrefrenceHelper = new SharedPrefrenceHelper();
-        Log.e("tag",sharedPrefrenceHelper.getUsername(this));
-        Log.e("tag",sharedPrefrenceHelper.getPassword(this));
+//        sharedPrefrenceHelper.setWithDrwal(this,0);
+//        sharedPrefrenceHelper.setDeposit(this,0);
+
         if (sharedPrefrenceHelper.getUsername(this).equals("default")){
-            sharedPrefrenceHelper.setUsername(this,"SuperAdmin");
-            sharedPrefrenceHelper.setPassword(this,"Admin@123");
+            sharedPrefrenceHelper.setUsername(this,"admin");
+            sharedPrefrenceHelper.setPassword(this,"123");
         }
 
     }

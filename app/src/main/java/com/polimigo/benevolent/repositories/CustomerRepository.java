@@ -21,6 +21,7 @@ import com.polimigo.benevolent.models.Customer;
 import com.polimigo.benevolent.viewModel.CustomerViewModel;
 import com.polimigo.benevolent.views.CustomersScreen;
 import com.polimigo.benevolent.views.adabters.CustomerAdapter;
+import com.polimigo.benevolent.views.adabters.CustomerWithDrwalAdapter;
 import com.polimigo.benevolent.views.events.BaseEvent;
 
 import org.jetbrains.annotations.NotNull;
@@ -83,6 +84,22 @@ public class CustomerRepository {
                     list.add(taskItem);
                     CustomerAdapter nurslyRecyclerViewAdapter = new CustomerAdapter(list, mContext);
                     recycleCustomer.setAdapter(nurslyRecyclerViewAdapter);
+                }
+                Log.d("Tag", list.toString());
+            }
+        });
+    }
+
+    public void getAllCustomerInWithDrawl(@NotNull final Context mContext, @NotNull final RecyclerView recycleCustomer) {
+        contactsCollectionReference
+                .get().addOnCompleteListener((OnCompleteListener<QuerySnapshot>) task -> {
+            if (task.isSuccessful()) {
+                ArrayList<Customer> list = new ArrayList<>();
+                for (DocumentSnapshot document : task.getResult()) {
+                    Customer taskItem = document.toObject(Customer.class);
+                    list.add(taskItem);
+                    CustomerWithDrwalAdapter customerAdapter  = new CustomerWithDrwalAdapter(list, mContext);
+                    recycleCustomer.setAdapter(customerAdapter);
                 }
                 Log.d("Tag", list.toString());
             }

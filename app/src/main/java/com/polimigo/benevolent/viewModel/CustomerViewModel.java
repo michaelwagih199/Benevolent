@@ -14,11 +14,10 @@ import com.polimigo.benevolent.repositories.CustomerRepository;
 import com.polimigo.benevolent.views.events.BaseEvent;
 
 public class CustomerViewModel extends BaseObservable {
+
     private Context context;
     private BaseEvent baseEvent;
-    private String successMessage = "Register Saved Successfully";
     private String validateMessage = "Please add all data";
-    private String errorMessage = "Saved Failed";
     private Customer customer;
     private String saveRegisterCheck;
     private CustomerRepository customerRepository;
